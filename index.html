@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Google analysis tag-このページを解析するためのもの-->
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-SMQ27CJKDV"></script>
+	<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		  gtag('config', 'G-SMQ27CJKDV');
+	</script>
+	<!--Google tag finish>
+	<!--google analysis tag終わり-->
+	
+	<!--文字コードと、検索された時の設定-->
+	<meta charset="utf-8">
+	<title>Team Aoristos公式サイト-メンバー紹介</title>
 
+	<link rel="stylesheet" href="/css/base.css">
+
+	<!--モバイル対応にする-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div id="header"></div>
+	<!--後のjsでここに、base_header.htmlを読み込み、追加する-->
+
+	<main>
+		<div class="title">
+			<h1>メンバー紹介</h1>
+			<p>チームAoristosのメンバーを紹介します。</p>
+			<p>個性豊かでオタク揃いのメンバーたち、最後までぜひ見ていってください！！</p>
+		</div>
+		<div class="introduction">
+			<p>では一人ずつ紹介していきます！</p>
+			<div class="introduction-onigiri">
+				<h3>おにぎり</h3>
+				<p class="introduction-major">専門：宇宙科学・現代物理・天文学・地学</p>
+				<p class="introduction-content">「色々やってます。シームレスに考えるのが得意です。」byおにぎり</p>
+				<p class="introduction-add">チームのリーダー／創始者でもある彼は、みんなをこの世界に連れてきてくれた人です。屈指の変人・天才であり、将来宗教を開きそうな人(？)です。</p>
+			</div>
+
+			<div class="introduction-tuna">
+				<h3>ツナ</h3>
+				<p class="introduction-major">専門：言語学・歴史・哲学</p>
+				<p class="introduction-content">「言語のことしか考えられません。好きな言語はギリシア語。」byツナ</p>
+				<p class="introduction-add">チームの第一副リーダーの彼はこのチームで唯一言語学が専門です。英語の語源などの知識は英語の先生よりもあります。</p>
+			</div>
+
+			<div class="introduction-sonneko">
+				<h3>sonneko</h3>
+				<p class="introduction-major">専門：生物・物理・化学・情報・地学・技術・数学</p>
+				<p class="introduction-content">「趣味が多すぎて困っています。」by&#180sonneko</p>
+				<p class="introduction-add">チームの第二副リーダーのsonnekoです。このサイトの開発をしています。自分で言うのもなんですが、このグループで一番の変人です。</p>
+            </div>
+		</div>
+	</main>
+
+	<div id="footer"></div>
+	<!--後のjsでここに、base_footer.htmlを読み込み、追加する-->
+</body>
+<!--base_header.htmlとbase_footer.htmlを読み込み、#headerと#footerに反映するjs-->
+<script>
+      fetch("../../base_header.html")//＊相対参照注意
+        .then((response) => response.text())
+        .then((data) => document.querySelector("#header").innerHTML = data);
+      fetch("../../base_footer.html")//＊相対参照注意
+        .then((response) => response.text())
+        .then((data) => document.querySelector("#footer").innerHTML = data);
+</script>
+</html>
