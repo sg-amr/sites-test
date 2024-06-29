@@ -1,0 +1,11 @@
+//毎日雑学用静的サイトジェネレーター
+const date = {
+    head: {
+        title: null,
+        description: null,
+        number: null,
+    },
+    main: {
+        contentHTML: null,
+    }
+};
