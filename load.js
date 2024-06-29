@@ -27,6 +27,8 @@ const WebAppURL = "https://script.google.com/macros/s/AKfycbyWLs-2-sjRDVGIIK-QKE
 //要素取得
 const contentElement = document.getElementById("content");
 const titleElement = document.getElementById("title")
+const beforeElement = document.getElementById("before");
+const afterElement = document.getelementById("after");
 
 //fetchして雑学を取得
 const TargetURL = WebAppURL + "?id=" + id;
@@ -41,4 +43,8 @@ fetch(TargetURL)
     const date = JSON.parse(json);
     contentElement.innerHTML = date.html;
     titleElement.innerHTML = date.title;
+    const beforeLink = "trivia.html?id=" + String(number(id) + 1);
+    const afterLink = "trivia.html?id=" + String(number(id) + 1);
+    beforeElement.setAttribute("href",beforeLink);
+    afterElement.setAttribute("href",afterLink);
   });
