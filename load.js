@@ -1,5 +1,25 @@
+function getUrlParams(url) {
+  const params = {};
+  const queryString = url.substring(url.indexOf('?') + 1);
+  const parts = queryString.split('&');
+
+  for (let i = 0; i < parts.length; i++) {
+      const pair = parts[i].split('=');
+      const key = decodeURIComponent(pair[0]);
+      const value = decodeURIComponent(pair[1] || '');
+      if (key) {
+          params[key] = value;
+      }
+  }
+
+  return params;
+}
+
 //何番目の雑学か？
-const id = 1;
+const currentUrl = window.location.href;
+const params = getUrlParam(currentUrl);
+
+const id = params.id;
 
 //GASのURL
 const WebAppURL = "https://script.google.com/macros/s/AKfycbyWLs-2-sjRDVGIIK-QKENNOsM5j5R8DsjO3c1kuNvLvzl4UCm_pHr_f0x2Ldz8Qsw_/exec";
