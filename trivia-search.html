@@ -6,6 +6,43 @@
     <title>Aoristosーこれまでの毎日雑学一覧</title>
 </head>
 <body>
-    
+    <main>
+        <div id="trivia"></div>
+    </main>
 </body>
+<script>
+    const triviaElement = document.getElementById("trivia");
+//GASのURL
+const WebAppURL = "https://script.google.com/macros/s/AKfycbyWLs-2-sjRDVGIIK-QKENNOsM5j5R8DsjO3c1kuNvLvzl4UCm_pHr_f0x2Ldz8Qsw_/exec";
+//fetchして雑学を取得
+
+const bodyHeight = document.body.clientHeight;
+const windowHeight = window.innerHeight;
+const nowPoint = bodyHeight - windowHeight;
+const nowId = 1;
+const TargetURL = WebAppURL + "?id=" + id;
+function loadTrivia (id) {
+    const TargetURL = 
+    fetch(TargetURL)
+    .then(function (date) {
+    // レスポンス処理
+    return date.json()
+    })
+    .then(function (json){
+    //htmlにロード
+    const date = JSON.parse(json);
+    const addText = "<list id=\"trivia-" + id + "\">" + date.title + "</list>";
+    triviaElement.innerText(triviaElement + addText);
+    });
+
+}
+window.addEventListener("scroll", () => {
+    const currentPos = window.pageYOffset;
+    if (bottomPoint <= currentPos) {
+        nowId += 1;
+        loadTrivia(nowId);
+    }
+})
+
+</script>
 </html>
