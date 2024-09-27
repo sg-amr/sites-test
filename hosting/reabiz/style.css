@@ -132,7 +132,6 @@ main {
     padding: 20px;
     margin-bottom: 250px;
     background: linear-gradient(135deg, #f0f8ff, #f4f4f4);
-    pointer-events: none;
 }
 
 .header {
