@@ -85,7 +85,7 @@ footer {
     padding-left: 50px;
     background: #4B466F;
     left: 0;
-    z-index: -1;
+    z-index: 10;
     color: #F56469;
 }
 
